@@ -1,0 +1,152 @@
+{
+    "apiVersion": "build.openshift.io/v1",
+    "kind": "BuildConfig",
+    "metadata": {
+        "annotations": {
+            "openshift.io/generated-by": "OpenShiftNewApp"
+        },
+        "creationTimestamp": "2022-08-17T17:03:33Z",
+        "labels": {
+            "app": "simple",
+            "app.kubernetes.io/component": "simple",
+            "app.kubernetes.io/instance": "simple"
+        },
+        "managedFields": [
+            {
+                "apiVersion": "build.openshift.io/v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:metadata": {
+                        "f:annotations": {
+                            ".": {},
+                            "f:openshift.io/generated-by": {}
+                        },
+                        "f:labels": {
+                            ".": {},
+                            "f:app": {},
+                            "f:app.kubernetes.io/component": {},
+                            "f:app.kubernetes.io/instance": {}
+                        }
+                    },
+                    "f:spec": {
+                        "f:output": {
+                            "f:to": {
+                                ".": {},
+                                "f:kind": {},
+                                "f:name": {}
+                            }
+                        },
+                        "f:runPolicy": {},
+                        "f:source": {
+                            "f:contextDir": {},
+                            "f:git": {
+                                ".": {},
+                                "f:uri": {}
+                            },
+                            "f:type": {}
+                        },
+                        "f:strategy": {
+                            "f:sourceStrategy": {
+                                ".": {},
+                                "f:env": {},
+                                "f:from": {
+                                    ".": {},
+                                    "f:kind": {},
+                                    "f:name": {},
+                                    "f:namespace": {}
+                                }
+                            },
+                            "f:type": {}
+                        }
+                    }
+                },
+                "manager": "oc",
+                "operation": "Update",
+                "time": "2022-08-17T17:05:25Z"
+            },
+            {
+                "apiVersion": "build.openshift.io/v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:spec": {
+                        "f:triggers": {}
+                    },
+                    "f:status": {
+                        "f:lastVersion": {}
+                    }
+                },
+                "manager": "openshift-apiserver",
+                "operation": "Update",
+                "time": "2022-08-17T17:29:31Z"
+            }
+        ],
+        "name": "simple",
+        "namespace": "ljrzis-build-app",
+        "resourceVersion": "118416101",
+        "selfLink": "/apis/build.openshift.io/v1/namespaces/ljrzis-build-app/buildconfigs/simple",
+        "uid": "ffbf3287-8a98-44c1-9f24-65703a08d935"
+    },
+    "spec": {
+        "failedBuildsHistoryLimit": 5,
+        "nodeSelector": null,
+        "output": {
+            "to": {
+                "kind": "ImageStreamTag",
+                "name": "simple:latest"
+            }
+        },
+        "postCommit": {},
+        "resources": {},
+        "runPolicy": "Serial",
+        "source": {
+            "contextDir": "build-app",
+            "git": {
+                "uri": "https://github.com/haroonob/DO288-apps"
+            },
+            "type": "Git"
+        },
+        "strategy": {
+            "sourceStrategy": {
+                "env": [
+                    {
+                        "name": "npm_config_registry",
+                        "value": "http://nexus-common.apps.eu46a.prod.ole.redhat.com/repository/nodejs"
+                    }
+                ],
+                "from": {
+                    "kind": "ImageStreamTag",
+                    "name": "nodejs:12-ubi8",
+                    "namespace": "openshift"
+                }
+            },
+            "type": "Source"
+        },
+        "successfulBuildsHistoryLimit": 5,
+        "triggers": [
+            {
+                "github": {
+                    "secret": "BGlnAIMv1zNdQ-es1KWd"
+                },
+                "type": "GitHub"
+            },
+            {
+                "generic": {
+                    "secret": "04522KXD8-V-4JFXIYsw"
+                },
+                "type": "Generic"
+            },
+            {
+                "type": "ConfigChange"
+            },
+            {
+                "imageChange": {
+                    "lastTriggeredImageID": "image-registry.openshift-image-registry.svc:5000/openshift/nodejs@sha256:1901bd665b9f30d353dbc3b5a9525a708649a1b5cddef6667aedfb071985f311"
+                },
+                "type": "ImageChange"
+            }
+        ]
+    },
+    "status": {
+        "lastVersion": 11
+    }
+}

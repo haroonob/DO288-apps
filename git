@@ -1,0 +1,1 @@
+	https://api.eu46a.prod.ole.redhat.com:6443/apis/build.openshift.io/v1/namespaces/ljrzis-build-app/buildconfigs/simple/webhooks/<secret>/github
