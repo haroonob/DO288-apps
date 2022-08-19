@@ -1,0 +1,1 @@
+s2i build test/test-app/ s2i-do288-go s2i-go-app  --as-dockerfile /home/student/s2i-go-app/Dockerfile
