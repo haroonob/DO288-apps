@@ -1,0 +1,87 @@
+apiVersion: v1
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
+items:
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2022-08-22T16:07:08Z"
+    generation: 1
+    labels:
+      app: quotesapi
+      app.kubernetes.io/component: quotesapi
+      app.kubernetes.io/instance: quotesapi
+    managedFields:
+    - apiVersion: image.openshift.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:openshift.io/generated-by: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+      manager: oc
+      operation: Update
+      time: "2022-08-22T16:07:08Z"
+    name: quotesapi
+    namespace: wcnrql-quotes-dev
+    resourceVersion: "129392758"
+    selfLink: /apis/image.openshift.io/v1/namespaces/wcnrql-quotes-dev/imagestreams/quotesapi
+    uid: b878374b-2215-48e5-9b98-d427b725dee8
+  spec:
+    lookupPolicy:
+      local: false
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/wcnrql-quotes-dev/quotesapi
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.eu45.prod.nextcle.com/wcnrql-quotes-dev/quotesapi
+    tags:
+    - items:
+      - created: "2022-08-22T16:07:41Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/wcnrql-quotes-dev/quotesapi@sha256:9577884af8db64aabf3dad7ba0c533b828da5ec3d403c542123717adac62488b
+        generation: 1
+        image: sha256:9577884af8db64aabf3dad7ba0c533b828da5ec3d403c542123717adac62488b
+      tag: latest
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/image.dockerRepositoryCheck: "2022-08-22T16:06:59Z"
+    creationTimestamp: "2022-08-22T16:06:59Z"
+    generation: 2
+    name: quotesdb
+    namespace: wcnrql-quotes-dev
+    resourceVersion: "129392415"
+    selfLink: /apis/image.openshift.io/v1/namespaces/wcnrql-quotes-dev/imagestreams/quotesdb
+    uid: 0368a0af-e47e-4bff-bfd7-32ab95fe0b9b
+  spec:
+    lookupPolicy:
+      local: false
+    tags:
+    - annotations: null
+      from:
+        kind: DockerImage
+        name: image-registry.openshift-image-registry.svc:5000/openshift/mysql:5.7
+      generation: 2
+      importPolicy: {}
+      name: "5.7"
+      referencePolicy:
+        type: Source
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/wcnrql-quotes-dev/quotesdb
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.eu45.prod.nextcle.com/wcnrql-quotes-dev/quotesdb
+    tags:
+    - items:
+      - created: "2022-08-22T16:06:59Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/openshift/mysql@sha256:9a781abe7581cc141e14a7e404ec34125b3e89c008b14f4e7b41e094fd3049fe
+        generation: 2
+        image: sha256:9a781abe7581cc141e14a7e404ec34125b3e89c008b14f4e7b41e094fd3049fe
+      tag: "5.7"
+
