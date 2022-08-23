@@ -5,7 +5,7 @@
     labels:
       app: quotesapi
     name: quotesapi
-   spec:
+    spec:
     failedBuildsHistoryLimit: 5
     nodeSelector: null
     output:
@@ -37,5 +37,4 @@
       type: Generic
     - type: ConfigChange
     - imageChange:
-        lastTriggeredImageID: image-registry.openshift-image-registry.svc:5000/openshift/php@sha256:cee55e4fa48f3536b478789018d466eb417ddb8360d0608f3d48cb5b72a77fca
       type: ImageChange
