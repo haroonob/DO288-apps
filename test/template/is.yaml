@@ -1,0 +1,86 @@
+apiVersion: v1
+items:
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2022-09-05T17:19:02Z"
+    generation: 1
+    labels:
+      app: quotesapi
+      app.kubernetes.io/component: quotesapi
+      app.kubernetes.io/instance: quotesapi
+    managedFields:
+    - apiVersion: image.openshift.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:openshift.io/generated-by: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+      manager: oc
+      operation: Update
+      time: "2022-09-05T17:19:02Z"
+    name: quotesapi
+    namespace: inlnak-quotes-dev
+    resourceVersion: "136246464"
+    selfLink: /apis/image.openshift.io/v1/namespaces/inlnak-quotes-dev/imagestreams/quotesapi
+    uid: 3d656c93-a97f-4df3-b7da-1d1f79b1e1f9
+  spec:
+    lookupPolicy:
+      local: false
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/inlnak-quotes-dev/quotesapi
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.eu45.prod.nextcle.com/inlnak-quotes-dev/quotesapi
+    tags:
+    - items:
+      - created: "2022-09-05T17:19:36Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/inlnak-quotes-dev/quotesapi@sha256:dac86f463103ba1659b8ecf6d3a1d61171b0d00563c20c463ba1219f9b8adefd
+        generation: 1
+        image: sha256:dac86f463103ba1659b8ecf6d3a1d61171b0d00563c20c463ba1219f9b8adefd
+      tag: latest
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/image.dockerRepositoryCheck: "2022-09-05T17:18:53Z"
+    creationTimestamp: "2022-09-05T17:18:53Z"
+    generation: 2
+    name: quotesdb
+    namespace: inlnak-quotes-dev
+    resourceVersion: "136246123"
+    selfLink: /apis/image.openshift.io/v1/namespaces/inlnak-quotes-dev/imagestreams/quotesdb
+    uid: c06cce9c-1d64-4ab3-b554-ada1c6903612
+  spec:
+    lookupPolicy:
+      local: false
+    tags:
+    - annotations: null
+      from:
+        kind: DockerImage
+        name: image-registry.openshift-image-registry.svc:5000/openshift/mysql:5.7
+      generation: 2
+      importPolicy: {}
+      name: "5.7"
+      referencePolicy:
+        type: Source
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/inlnak-quotes-dev/quotesdb
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.eu45.prod.nextcle.com/inlnak-quotes-dev/quotesdb
+    tags:
+    - items:
+      - created: "2022-09-05T17:18:53Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/openshift/mysql@sha256:9a781abe7581cc141e14a7e404ec34125b3e89c008b14f4e7b41e094fd3049fe
+        generation: 2
+        image: sha256:9a781abe7581cc141e14a7e404ec34125b3e89c008b14f4e7b41e094fd3049fe
+      tag: "5.7"
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

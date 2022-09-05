@@ -1,0 +1,70 @@
+apiVersion: v1
+items:
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    annotations:
+      openshift.io/host.generated: "true"
+    creationTimestamp: "2022-09-05T17:19:44Z"
+    labels:
+      app: quotesapi
+      app.kubernetes.io/component: quotesapi
+      app.kubernetes.io/instance: quotesapi
+    managedFields:
+    - apiVersion: route.openshift.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+        f:spec:
+          f:port:
+            .: {}
+            f:targetPort: {}
+          f:to:
+            f:kind: {}
+            f:name: {}
+            f:weight: {}
+          f:wildcardPolicy: {}
+      manager: oc
+      operation: Update
+      time: "2022-09-05T17:19:44Z"
+    - apiVersion: route.openshift.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:ingress: {}
+      manager: openshift-router
+      operation: Update
+      time: "2022-09-05T17:19:44Z"
+    name: quotesapi
+    namespace: inlnak-quotes-dev
+    resourceVersion: "136246555"
+    selfLink: /apis/route.openshift.io/v1/namespaces/inlnak-quotes-dev/routes/quotesapi
+    uid: 73eb633f-5501-4815-a85c-ac60ec76b5a1
+  spec:
+    host: quotesapi-inlnak-quotes-dev.apps.eu45.prod.nextcle.com
+    port:
+      targetPort: 8080-tcp
+    to:
+      kind: Service
+      name: quotesapi
+      weight: 100
+    wildcardPolicy: None
+  status:
+    ingress:
+    - conditions:
+      - lastTransitionTime: "2022-09-05T17:19:44Z"
+        status: "True"
+        type: Admitted
+      host: quotesapi-inlnak-quotes-dev.apps.eu45.prod.nextcle.com
+      routerCanonicalHostname: apps.eu45.prod.nextcle.com
+      routerName: default
+      wildcardPolicy: None
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

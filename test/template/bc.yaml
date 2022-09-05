@@ -1,0 +1,105 @@
+apiVersion: v1
+items:
+- apiVersion: build.openshift.io/v1
+  kind: BuildConfig
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2022-09-05T17:19:02Z"
+    labels:
+      app: quotesapi
+      app.kubernetes.io/component: quotesapi
+      app.kubernetes.io/instance: quotesapi
+    managedFields:
+    - apiVersion: build.openshift.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:openshift.io/generated-by: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+        f:spec:
+          f:output:
+            f:to:
+              .: {}
+              f:kind: {}
+              f:name: {}
+          f:runPolicy: {}
+          f:source:
+            f:contextDir: {}
+            f:git:
+              .: {}
+              f:uri: {}
+            f:type: {}
+          f:strategy:
+            f:sourceStrategy:
+              .: {}
+              f:from:
+                .: {}
+                f:kind: {}
+                f:name: {}
+                f:namespace: {}
+            f:type: {}
+      manager: oc
+      operation: Update
+      time: "2022-09-05T17:19:02Z"
+    - apiVersion: build.openshift.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:triggers: {}
+        f:status:
+          f:lastVersion: {}
+      manager: openshift-apiserver
+      operation: Update
+      time: "2022-09-05T17:19:03Z"
+    name: quotesapi
+    namespace: inlnak-quotes-dev
+    resourceVersion: "136246250"
+    selfLink: /apis/build.openshift.io/v1/namespaces/inlnak-quotes-dev/buildconfigs/quotesapi
+    uid: 4f834f27-53d2-4b93-916e-3fba20d47e2a
+  spec:
+    failedBuildsHistoryLimit: 5
+    nodeSelector: null
+    output:
+      to:
+        kind: ImageStreamTag
+        name: quotesapi:latest
+    postCommit: {}
+    resources: {}
+    runPolicy: Serial
+    source:
+      contextDir: quotes
+      git:
+        uri: https://github.com/haroonob/DO288-apps
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: ImageStreamTag
+          name: php:7.2
+          namespace: openshift
+      type: Source
+    successfulBuildsHistoryLimit: 5
+    triggers:
+    - github:
+        secret: 4b68s_5Hib-F5OIevadW
+      type: GitHub
+    - generic:
+        secret: xYon-azYhOpM1_UYm4yG
+      type: Generic
+    - type: ConfigChange
+    - imageChange:
+        lastTriggeredImageID: image-registry.openshift-image-registry.svc:5000/openshift/php@sha256:cee55e4fa48f3536b478789018d466eb417ddb8360d0608f3d48cb5b72a77fca
+      type: ImageChange
+  status:
+    lastVersion: 1
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
